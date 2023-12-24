@@ -26,3 +26,10 @@ Host some-internal-host
 ```bash
 ssh some-internal-host
 ```
+
+
+HW4
+testapp_IP = 158.160.118.171
+testapp_port = 9292
+
+Для автоматического создания и конфигурирования ВМ в Яндекс облаке необходимо запустить скрипт create_vm.sh
