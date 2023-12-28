@@ -1,0 +1,15 @@
+#cloud-config
+  version: v1
+  users:
+    - default
+    - name: centhis
+      gecos: Sergey Papulov
+      groups: sudo
+      shell: /bin/bash
+      sudo: ['ALL=(ALL) NOPASSWD:ALL']
+      lock_passwd: false
+      passwd: $6$rounds=4096$WhW2cxlj/QX90$Jic1yPwlpiWV98oX8akplpOX4e7pgJlWHCfKAyPiMf7xP1AqI7iocN/gjWQNX9WuIUf14LVgxJluajfOInk.u.
+      ssh_authorized_keys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCdruVrOk85oYrK/841eb7BsRalcaY6KYm/IaUjAimw0ZrxyQQd9ybRBiRtsQIN2YVORYdSyhm4n1O7zpvMD9YYd6Nodjv2vtxFHBzwIQSFBMHP/1cjgmQPu0u5iqAqnpe2+vL7EhM8HM7fb+a+TzFsrQfmihnodYfwT/FxOgm2sBNNkYJCSNWxhYSmcZkIBXt/8LS6C6vZfqMeMNiXTJK8eFSbpz4xpJjQkZgkSDlGRNUZYvEemrc4BwI/PYx4CedZ83Sefas+xyPnSCz3gBifRyyB2Xwz0XhvI+sXTu0WNN3M+U56YDfnAjt3MFvMtJrmQRsr/5sL/fD/5Cgagm5PtMFX9Wu3WgImZF5r0P1RLlQvGgmxJ464qtQ0/1+AM8fJyyio/5cetQ9N74tQc9fwEMwVeJ56SXU9lcP8n5X9fLqY/kBlIO4JmQBjb/YmkVPPl4C7xGewIyHShN7s0sjBLGGx0waHKby6Vg7wKzQEVJqA6Pm0b042I55SxJ8bjNk= centhis"
+  runcmd:
+    - sudo service reddit start

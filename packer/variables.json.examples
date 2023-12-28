@@ -1,0 +1,5 @@
+{
+    "folder_id": "your_folder_id",
+    "source_image_family": "your_image_family",
+    "service_account_key_file": "path_to_your_ssh-key.pub"
+}
