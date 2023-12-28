@@ -1,6 +1,6 @@
 {
     "folder_id": "your_folder_id",
     "source_image_family": "your_image_family",
-    "service_account_key_file": "/home/centhis/devops-HW/key.json",
+    "service_account_key_file": "key.json",
     "platform_id": "standard-v1"
 }
