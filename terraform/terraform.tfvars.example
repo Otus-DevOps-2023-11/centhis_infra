@@ -1,0 +1,10 @@
+cloud_id                 = "your_cloud_id"
+folder_id                = "your_folder_id"
+zone                     = "ru-central1-a"
+service_account_key_file = "files/key.json"
+public_key_path          = "/path_to_your/ssh-key.pub"
+private_key_path         = "/path_to_your/ssh-key"
+image_id                 = "your_image_id"
+subnet_id                = "your_subnet_id"
+network_id               = "your_network_id"
+count-reddit-apps        = 1
