@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #terraform {
 #  required_providers {
 #    yandex = {
@@ -6,6 +7,16 @@
 #  }
 #  required_version = ">= 0.13"
 #}
+=======
+# terraform {
+#   required_providers {
+#     yandex = {
+#       source = "yandex-cloud/yandex"
+#     }
+#   }
+#   required_version = ">= 0.13"
+# }
+>>>>>>> 847798e (change alb to lb)
 
 provider "yandex" {
   service_account_key_file = var.service_account_key_file
