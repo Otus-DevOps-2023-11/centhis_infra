@@ -1,5 +1,5 @@
-resource "yandex_lb_target_group" "reddit-app"{
-  name      = "reddit-app"
+resource "yandex_lb_target_group" "reddit-app" {
+  name = "reddit-app"
   dynamic "target" {
     for_each = yandex_compute_instance.app
     content {

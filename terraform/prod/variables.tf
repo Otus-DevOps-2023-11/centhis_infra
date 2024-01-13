@@ -28,5 +28,19 @@ variable "network_id" {
 }
 variable "count-reddit-apps" {
   description = "Count of reddit app servers"
-  default = 1
+  default     = 1
+}
+variable "app_disk_image" {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
+}
+variable "db_disk_image" {
+  description = "Disk image for reddit db"
+  default     = "reddit-db-base"
+}
+variable "reddit_app_vm_name" {
+  description = "VM Name for reddit app"
+}
+variable "reddit_db_vm_name" {
+  description = "VM Name for reddit db"
 }
