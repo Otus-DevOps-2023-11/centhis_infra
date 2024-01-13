@@ -8,3 +8,5 @@ image_id                 = "your_image_id"
 subnet_id                = "your_subnet_id"
 network_id               = "your_network_id"
 count-reddit-apps        = 1
+app_disk_image           = "reddit-app-base"
+db_disk_image           = "reddit-db-base"
