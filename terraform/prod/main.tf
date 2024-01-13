@@ -41,7 +41,7 @@ module "app" {
   reddit_app_vm_name = var.reddit_app_vm_name
   private_key_path   = var.private_key_path
   DATABASE_URL       = module.db.external_ip_address_db
-  depends_on         = [module.db]
+  #depends_on         = [module.db]
 
 }
 module "db" {
