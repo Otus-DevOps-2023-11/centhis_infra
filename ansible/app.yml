@@ -20,7 +20,9 @@
       group: ubuntu
 
   - name: enable puma
-    systemd: name=reddit enabled=yes
+    systemd:
+      name: reddit
+      enabled: yes
 
   handlers:
   - name: reload reddit

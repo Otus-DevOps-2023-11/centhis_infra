@@ -5,7 +5,7 @@
 
   tasks:
   - name: Install mongodb
-    ansible.builtin.apt:
+    apt:
       name: mongodb
       state: present
 

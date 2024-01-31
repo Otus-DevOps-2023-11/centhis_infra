@@ -8,7 +8,7 @@
 
   tasks:
   - name: install git
-    ansible.builtin.apt:
+    apt:
       name: git
       state: present
 

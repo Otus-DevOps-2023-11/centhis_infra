@@ -5,16 +5,16 @@
 
   tasks:
     - name: Install ruby
-      ansible.builtin.apt:
+      apt:
         name: ruby-full
         state: present
 
     - name: Install bundler
-      ansible.builtin.apt:
+      apt:
         name: ruby-bundler
         state: present
 
     - name: Install build-essential
-      ansible.builtin.apt:
+      apt:
         name: build-essential
         state: present
