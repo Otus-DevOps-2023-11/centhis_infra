@@ -1,10 +1,10 @@
 terraform {
-  # required_providers {
-  #   yandex = {
-  #     source = "yandex-cloud/yandex"
-  #   }
-  # }
-  # required_version = ">= 0.13"
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  required_version = ">= 0.13"
 }
 
 
@@ -41,7 +41,7 @@ resource "yandex_compute_instance" "db" {
     # путь до приватного ключа
     private_key = file(var.private_key_path)
   }
-  provisioner "remote-exec" {
-    script = "../modules/db/files/mongodb_settings.sh"
-  }
+  # provisioner "remote-exec" {
+  #   script = "../modules/db/files/mongodb_settings.sh"
+  # }
 }

@@ -1,0 +1,20 @@
+---
+- name: Install soft for app
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install ruby
+      ansible.builtin.apt:
+        name: ruby-full
+        state: present
+
+    - name: Install bundler
+      ansible.builtin.apt:
+        name: ruby-bundler
+        state: present
+
+    - name: Install build-essential
+      ansible.builtin.apt:
+        name: build-essential
+        state: present
