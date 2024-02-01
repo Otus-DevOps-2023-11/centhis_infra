@@ -1,10 +1,10 @@
 terraform {
-  # required_providers {
-  #   yandex = {
-  #     source = "yandex-cloud/yandex"
-  #   }
-  # }
-  # required_version = ">= 0.13"
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  required_version = ">= 0.13"
 }
 
 
@@ -41,18 +41,18 @@ resource "yandex_compute_instance" "app" {
     # путь до приватного ключа
     private_key = file(var.private_key_path)
   }
-  provisioner "file" {
-    source      = "../modules/app/files/reddit.service"
-    destination = "/tmp/reddit.service"
-  }
-  provisioner "remote-exec" {
-    script = "../modules/app/files/deploy.sh"
-  }
-  provisioner "remote-exec" {
-    inline = [
-      "sudo sed -i '/.Service./a Environment=DATABASE_URL=${var.DATABASE_URL}:27017' /etc/systemd/system/reddit.service",
-      "sudo systemctl daemon-reload",
-      "sudo service reddit restart",
-    ]
-  }
+  # provisioner "file" {
+  #   source      = "../modules/app/files/reddit.service"
+  #   destination = "/tmp/reddit.service"
+  # }
+  # provisioner "remote-exec" {
+  #   script = "../modules/app/files/deploy.sh"
+  # }
+  # provisioner "remote-exec" {
+  #   inline = [
+  #     "sudo sed -i '/.Service./a Environment=DATABASE_URL=${var.DATABASE_URL}:27017' /etc/systemd/system/reddit.service",
+  #     "sudo systemctl daemon-reload",
+  #     "sudo service reddit restart",
+  #   ]
+  # }
 }
