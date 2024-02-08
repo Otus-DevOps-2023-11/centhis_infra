@@ -26,7 +26,7 @@
     bundler:
       state: present
       chdir: /home/{{ deploy_user }}/reddit
-    become_user: ubuntu
+    # become_user: ubuntu
 
   handlers:
   - name: reload reddit
