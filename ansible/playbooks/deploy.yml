@@ -12,7 +12,7 @@
     apt:
       name: git
       state: present
-    # become: true
+      become: true
 
   - name: Fetch the latest version of application code
     git:
