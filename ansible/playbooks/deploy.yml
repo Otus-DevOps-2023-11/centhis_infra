@@ -20,7 +20,7 @@
       dest: /home/{{ deploy_user }}/reddit
       version: monolith
     notify: reload reddit
-    become_user: ubuntu
+    # become_user: ubuntu
 
   - name: Bundle install
     bundler:
