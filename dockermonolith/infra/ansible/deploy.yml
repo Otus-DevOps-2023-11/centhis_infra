@@ -1,0 +1,17 @@
+---
+- name: Deploy app
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Pull container
+    docker_image:
+      name: "centhisone/otus-reddit:1.0"
+      source: pull
+
+  - name: Start container
+    docker_container:
+      name: reddit
+      image: centhisone/otus-reddit:1.0
+      ports:
+      - 9292:9292
