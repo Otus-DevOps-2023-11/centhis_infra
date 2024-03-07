@@ -50,6 +50,8 @@ staging:
   tags:
     - test
   when: manual
+  only:
+    - /^\d+\.\d+\.\d+/
   script:
     - echo 'Deploy'
   environment:
@@ -61,6 +63,8 @@ production:
   tags:
     - test
   when: manual
+  only:
+    - /^\d+\.\d+\.\d+/
   script:
     - echo 'Deploy'
   environment:
