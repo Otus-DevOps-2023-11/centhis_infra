@@ -5,20 +5,28 @@ stages:
 
 build_job:
   stage: build
+  tags:
+    test
   script:
     - echo 'Building'
 
 test_unit_job:
   stage: test
+  tags:
+    test
   script:
     - echo 'Testing 1'
 
 test_integration_job:
   stage: test
+  tags:
+    test
   script:
     - echo 'Testing 2'
 
 deploy_job:
   stage: deploy
+  tags:
+    test
   script:
     - echo 'Deploying'
