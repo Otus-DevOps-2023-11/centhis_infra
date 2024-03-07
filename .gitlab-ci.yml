@@ -46,7 +46,7 @@ deploy_dev_job:
     url: http://dev.example.com
 
 staging:
-  stage: production
+  stage: stage
   tags:
     - test
   when: manual
@@ -60,6 +60,7 @@ production:
   stage: production
   tags:
     - test
+  when: manual
   script:
     - echo 'Deploy'
   environment:
