@@ -143,3 +143,18 @@ HW11
 - плейбук deploy параметризирован (переменная deploy_user)
 - в Vagrantfile добавлено переопределение переменной deploy_user
 - для конфигурации nginx в Vagrantfile добавлено определение переменной nginx_sites
+
+HW16
+- создана ветка citlab-ci-1
+- ВМ в ЯО создана с помощью terraform
+- создан docker-compose.yml для запуска gitlab в контейнере
+- с помощью плейбука ansible установлен и настроен экземпляр gitlab
+- в gitlab создана группа и проект
+- для репозитория infra добавлен remote (git remote add gitlab http://158.160.40.2/homework/example.git)
+- создана структура CI/CD Pipeline (.gitlab-ci.yml), ветка отправлена в gitlab (git push gitlab gitlab-ci-1)
+- на ВМ с gitlab установлен и зарегистрирован gitlab runner через докер. pipeline запустился
+- в проект добавлен исходный код приложения reddit
+- в pipeline добавлены автоматические тесты для приложения reddit
+- добавлены необходимые окружения
+- добавлены условия для задач
+- добавлены динамические окружения

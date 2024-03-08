@@ -25,6 +25,8 @@ test_unit_job:
   stage: test
   tags:
     - test
+  services:
+    - mongo:latest
   script:
     - ruby simpletest.rb
 
