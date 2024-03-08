@@ -1,0 +1,48 @@
+---
+- name: Install docker
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Add docker GPG apt key
+    apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+
+  - name: Add docker repository
+    apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+  - name: Clean apt
+    apt:
+      clean: yes
+
+  - name: Update apt and install docker-ce
+    apt:
+      name: docker-ce
+      state: latest
+ #     update_cache: true
+
+  - name: Create dirs
+    file:
+      path: "{{ item }}"
+      state: directory
+      mode: 0755
+    with_items:
+      - "/srv/gitlab/config"
+      - "/srv/gitlab/data"
+      - "/srv/gitlab/logs"
+      - "~/gitlab"
+
+  - name: Copy docker-compose.yml
+    copy:
+      src: docker-compose.yml
+      dest: ~/gitlab/docker-compose.yml
+      mode: 0755
+
+  - name: Start gitlab
+    community.docker.docker_compose_v2:
+      project_src: ~/gitlab
+      files:
+        - docker-compose.yml

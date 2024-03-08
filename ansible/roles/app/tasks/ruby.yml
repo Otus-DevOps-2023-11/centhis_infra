@@ -1,0 +1,18 @@
+---
+- name: Install ruby
+  apt:
+    name: ruby-full
+    state: present
+  tags: ruby
+
+- name: Install bundler
+  apt:
+    name: ruby-bundler
+    state: present
+  tags: ruby
+
+- name: Install build-essential
+  apt:
+    name: build-essential
+    state: present
+  tags: ruby
